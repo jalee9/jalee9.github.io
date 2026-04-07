@@ -1,3 +1,10 @@
+/* 
+GLOBAL STYLES
+- Defines colors, spacing, and base typography
+- These variables make it easy to update the design later
+*/
+
+:root {
 :root {
   --bg: #f7f5f2;
   --surface: #ffffff;
@@ -83,6 +90,12 @@ img { max-width: 100%; display: block; }
   padding: 5rem 0 3rem;
 }
 
+/* 
+PROFILE IMAGE
+- Controls size, spacing, and shape of the image
+- Adjust width/max-width to change visual balance
+*/
+  
 .profile-img {
   display: block;
   width: 82%;
@@ -91,6 +104,12 @@ img { max-width: 100%; display: block; }
   margin: 0 auto 1rem;
   border-radius: 12px;
 }
+
+  /* 
+HERO GRID LAYOUT
+- Creates a two-column layout on desktop
+- Stacks into one column on smaller screens (responsive design)
+*/
 
 .hero-grid {
   display: grid;
