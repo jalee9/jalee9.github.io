@@ -84,12 +84,12 @@ img { max-width: 100%; display: block; }
 }
 
 .profile-img {
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  object-fit: contain;
-  background: #f3f4f6;
+  display: block;
+  width: 82%;
+  max-width: 320px;
+  height: auto;
+  margin: 0 auto 1rem;
   border-radius: 12px;
-  margin-bottom: 1rem;
 }
 
 .hero-grid {
