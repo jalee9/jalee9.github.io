@@ -58,10 +58,10 @@ Includes:
 
 ## 🤝 Connect
 
-- GitHub: https://github.com/jalee9  
-- Website: https://jalee9.github.io  
-- LinkedIn: (add your link here)
+- GitHub: [(https://github.com/jalee9] 
+- Website: [(https://jalee9.github.io)]
+- LinkedIn: [(https://www.linkedin.com/in/jskinnerlee/)]
 
 ---
 
-> “The best digital spaces still leave room for humanity.”
+> “The best digital spaces still leave room for humanity.” - Jennifer Lee
