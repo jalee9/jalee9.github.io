@@ -287,6 +287,13 @@ section {
   box-shadow: var(--shadow);
 }
 
+.speaking-section .contact-box {
+  margin-top: 2rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.5rem;
+  background: #fafafa;
+}
+
 .page-hero {
   padding: 4.5rem 0 1.5rem;
 }
