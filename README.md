@@ -58,9 +58,9 @@ Includes:
 
 ## 🤝 Connect
 
-- GitHub: [(https://github.com/jalee9] 
-- Website: [(https://jalee9.github.io)]
-- LinkedIn: [(https://www.linkedin.com/in/jskinnerlee/)]
+- GitHub: https://github.com/jalee9 
+- Website: https://jalee9.github.io
+- LinkedIn: https://www.linkedin.com/in/jskinnerlee/
 
 ---
 
