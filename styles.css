@@ -85,7 +85,9 @@ img { max-width: 100%; display: block; }
 
 .profile-img {
   width: 100%;
-  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+  background: #f3f4f6;
   border-radius: 12px;
   margin-bottom: 1rem;
 }
