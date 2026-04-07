@@ -347,6 +347,35 @@ section {
   padding-left: 1.2rem;
 }
 
+/* =========================================
+   PULL QUOTE STYLING
+   - Highlights an important idea in the article
+   - Visually separates it from regular paragraphs
+========================================= */
+
+.pull-quote {
+  /* Slightly larger text for emphasis */
+  font-size: 1.4rem;
+
+  /* Improves readability */
+  line-height: 1.6;
+
+  /* Italic gives it a "quote" feel */
+  font-style: italic;
+
+  /* Uses your site’s accent color */
+  color: var(--accent);
+
+  /* Space above and below the quote */
+  margin: 1.5rem 0 2rem;
+
+  /* Adds spacing between border and text */
+  padding-left: 1rem;
+
+  /* Left border creates visual emphasis */
+  border-left: 3px solid var(--accent);
+}
+
 .back-link {
   display: inline-block;
   margin-top: 1.5rem;
