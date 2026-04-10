@@ -291,6 +291,177 @@ section {
   font-weight: 600;
 }
 
+/* 
+BLOG INDEX FILTER LAYOUT
+- This section creates the search + tags area for the blog index page
+- Mobile first means the filters appear above the posts on smaller screens
+- On wider screens, the filters move into a right sidebar
+*/
+
+.blog-index-layout {
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* 
+BLOG SIDEBAR
+- Holds the search box and tag filters
+- On mobile it sits above the blog list
+*/
+.blog-sidebar {
+  display: grid;
+  gap: 1rem;
+}
+
+/* 
+FILTER CARD
+- Reuses the same soft card look used elsewhere on the site
+- Keeps search and tags visually grouped
+*/
+.blog-filter-card {
+  background: var(--surface);
+  border: 1px solid rgba(229, 231, 235, 0.9);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.25rem;
+}
+
+/* 
+FILTER LABEL
+- Used for both the search label and the tags heading
+*/
+.blog-filter-label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+  color: var(--text);
+}
+
+/* 
+SEARCH INPUT
+- Full width for mobile usability
+- Rounded style matches the rest of the site
+*/
+.blog-search {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+}
+
+/* 
+FOCUS STATE
+- Helps keyboard users and improves accessibility
+*/
+.blog-search:focus {
+  outline: 2px solid var(--accent-soft);
+  outline-offset: 2px;
+  border-color: var(--accent);
+}
+
+/* 
+TAG LIST
+- Flexbox allows the buttons to wrap naturally
+- This works especially well on smaller screens
+*/
+.blog-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+/* 
+TAG BUTTONS
+- These act like filter controls
+- The active class is added/removed with JavaScript
+*/
+.blog-tag-button {
+  border: 1px solid var(--line);
+  background: #f3f4f6;
+  color: #374151;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover and keyboard focus styling */
+.blog-tag-button:hover,
+.blog-tag-button:focus-visible {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent-soft);
+}
+
+/* 
+ACTIVE TAG BUTTON
+- Highlights the currently selected tag
+*/
+.blog-tag-button.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* 
+BLOG MAIN AREA
+- Prevents layout issues when content gets long
+*/
+.blog-main {
+  min-width: 0;
+}
+
+/* 
+EMPTY STATE MESSAGE
+- Appears only when no blog cards match the current filter
+*/
+.blog-empty {
+  margin-top: 1rem;
+  color: var(--muted);
+}
+
+/* 
+BLOG CARD TAG SPACING
+- Adds comfortable spacing between the excerpt, visible tags, and the Read more link
+*/
+.blog-card .tag-row {
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+/* 
+DESKTOP LAYOUT
+- On screens wider than 900px:
+  1. Blog posts appear on the left
+  2. Filters move into a sidebar on the right
+*/
+@media (min-width: 901px) {
+  .blog-index-layout {
+    grid-template-columns: minmax(0, 2fr) minmax(260px, 320px);
+    align-items: start;
+  }
+
+  .blog-main {
+    order: 1;
+  }
+
+  .blog-sidebar {
+    order: 2;
+
+    /* 
+    Sticky keeps the filters visible as the user scrolls,
+    which is especially nice on longer blog pages
+    */
+    position: sticky;
+    top: 96px;
+  }
+}
 .quote-card {
   background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
 }
