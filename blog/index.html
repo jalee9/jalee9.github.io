@@ -1,17 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Basic page setup -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Browser tab title -->
   <title>The Quiet Work | Jennifer Lee</title>
-  <meta name="description" content="The Quiet Work, a writing space by Jennifer Lee on teaching, leadership, and human-centered digital work." />
+
+  <!-- Short description for search engines and link previews -->
+  <meta
+    name="description"
+    content="The Quiet Work, a writing space by Jennifer Lee on teaching, leadership, and human-centered digital work."
+  />
+
+  <!-- Link to the shared site stylesheet -->
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
+  <!-- 
+    SITE HEADER
+    - Includes brand name and navigation
+    - Mobile menu button is controlled by JavaScript
+  -->
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="../index.html">Jennifer <span>Lee</span></a>
-      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+
+      <!-- Mobile menu button -->
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        Menu
+      </button>
+
+      <!-- Main navigation -->
       <nav class="nav-links" id="navLinks">
         <a href="../index.html">Home</a>
         <a class="active" href="index.html">The Quiet Work</a>
@@ -20,55 +46,195 @@
   </header>
 
   <main>
+    <!-- 
+      PAGE HERO
+      - Introduces the blog section
+      - Gives visitors context for the type of writing they will find here
+    -->
     <section class="page-hero">
       <div class="container">
         <div class="eyebrow">Writing</div>
         <h1>The Quiet Work</h1>
-        <p class="copy-muted">Essays on teaching, leadership, online learning, and the work of staying human in digital spaces.</p>
+        <p class="copy-muted">
+          Essays on teaching, leadership, online learning, and the work of staying human in digital spaces.
+        </p>
       </div>
     </section>
 
+    <!-- 
+      BLOG INDEX SECTION
+      - Mobile-first layout:
+        On smaller screens, filters appear above the post list.
+        On larger screens, filters shift into a sidebar.
+    -->
     <section>
       <div class="container">
-        <div class="blog-list">
-          <article class="blog-card">
-            <div class="meta">April 2026</div>
-            <h3>What Artemis II Taught Me About Teaching</h3>
-            <p>A reflection on what space missions can teach us about preparation, human judgment, and the quiet work of teaching.</p>
-            <a class="read-more" href="artemis-teaching.html">Read more →</a>
-          </article>
-          
-          <article class="blog-card">
-            <div class="meta">April 2026</div>
-            <h3>Quiet Leadership in Everyday Work</h3>
-            <p>Leadership is not always loud. Sometimes it looks like consistency, encouragement, and care.</p>
-            <a class="read-more" href="quiet-leadership.html">Read more →</a>
-          </article>
+        <div class="blog-index-layout">
 
-          <article class="blog-card">
-            <div class="meta">February 2026</div>
-            <h3>Why Human Connection Still Matters in Online Teaching</h3>
-            <p>A reflection on visibility, presence, and the role of authentic instructor communication in digital spaces.</p>
-            <a class="read-more" href="human-connection-online-teaching.html">Read more →</a>
-          </article>
+          <!-- 
+            BLOG FILTERS / SIDEBAR
+            - Search box lets visitors search by title, excerpt, or tags
+            - Tag buttons let visitors filter by topic
+          -->
+          <aside class="blog-sidebar" aria-label="Blog filters">
 
-          <article class="blog-card">
-            <div class="meta">January 2026</div>
-            <h3>Teaching with AI Without Losing the Human Part</h3>
-            <p>Thoughts on using AI in practical, ethical, and student-centered ways in higher education.</p>
-            <a class="read-more" href="teaching-with-ai-human-part.html">Read more →</a>
-          </article>
+            <!-- Search box -->
+            <div class="blog-filter-card">
+              <label for="blogSearch" class="blog-filter-label">Search</label>
+              <input
+                type="text"
+                id="blogSearch"
+                class="blog-search"
+                placeholder="Search posts..."
+              />
+            </div>
+
+            <!-- Tag buttons -->
+            <div class="blog-filter-card">
+              <h2 class="blog-filter-label">Tags</h2>
+
+              <div class="blog-tag-list">
+                <!-- 
+                  data-tag values are used by JavaScript.
+                  "all" resets the filter to show every post.
+                -->
+                <button class="blog-tag-button active" type="button" data-tag="all">All</button>
+                <button class="blog-tag-button" type="button" data-tag="teaching">Teaching</button>
+                <button class="blog-tag-button" type="button" data-tag="leadership">Leadership</button>
+                <button class="blog-tag-button" type="button" data-tag="online-learning">Online Learning</button>
+                <button class="blog-tag-button" type="button" data-tag="ai">AI</button>
+                <button class="blog-tag-button" type="button" data-tag="human-connection">Human Connection</button>
+                <button class="blog-tag-button" type="button" data-tag="reflection">Reflection</button>
+              </div>
+            </div>
+          </aside>
+
+          <!-- 
+            MAIN BLOG CONTENT
+            - Holds the collection of blog cards
+            - Each card includes custom data attributes for filtering
+          -->
+          <div class="blog-main">
+            <div class="blog-list" id="blogList">
+
+              <!-- 
+                BLOG CARD
+                data-title   = searchable title text
+                data-excerpt = searchable summary text
+                data-tags    = searchable/filterable tag values
+
+                Important:
+                data-tags should use lowercase tag "slugs" separated by spaces.
+                Example: teaching reflection leadership
+              -->
+              <article
+                class="blog-card"
+                data-tags="teaching reflection leadership"
+                data-title="What Artemis II Taught Me About Teaching"
+                data-excerpt="A reflection on what space missions can teach us about preparation, human judgment, and the quiet work of teaching."
+              >
+                <div class="meta">April 2026</div>
+                <h3>What Artemis II Taught Me About Teaching</h3>
+                <p>
+                  A reflection on what space missions can teach us about preparation, human judgment, and the quiet work of teaching.
+                </p>
+
+                <!-- Visible tags for readers -->
+                <div class="tag-row">
+                  <span class="tag">Teaching</span>
+                  <span class="tag">Reflection</span>
+                  <span class="tag">Leadership</span>
+                </div>
+
+                <a class="read-more" href="artemis-teaching.html">Read more →</a>
+              </article>
+
+              <article
+                class="blog-card"
+                data-tags="leadership reflection human-connection"
+                data-title="Quiet Leadership in Everyday Work"
+                data-excerpt="Leadership is not always loud. Sometimes it looks like consistency, encouragement, and care."
+              >
+                <div class="meta">April 2026</div>
+                <h3>Quiet Leadership in Everyday Work</h3>
+                <p>
+                  Leadership is not always loud. Sometimes it looks like consistency, encouragement, and care.
+                </p>
+
+                <div class="tag-row">
+                  <span class="tag">Leadership</span>
+                  <span class="tag">Reflection</span>
+                  <span class="tag">Human Connection</span>
+                </div>
+
+                <a class="read-more" href="quiet-leadership.html">Read more →</a>
+              </article>
+
+              <article
+                class="blog-card"
+                data-tags="online-learning teaching human-connection"
+                data-title="Why Human Connection Still Matters in Online Teaching"
+                data-excerpt="A reflection on visibility, presence, and the role of authentic instructor communication in digital spaces."
+              >
+                <div class="meta">February 2026</div>
+                <h3>Why Human Connection Still Matters in Online Teaching</h3>
+                <p>
+                  A reflection on visibility, presence, and the role of authentic instructor communication in digital spaces.
+                </p>
+
+                <div class="tag-row">
+                  <span class="tag">Online Learning</span>
+                  <span class="tag">Teaching</span>
+                  <span class="tag">Human Connection</span>
+                </div>
+
+                <a class="read-more" href="human-connection-online-teaching.html">Read more →</a>
+              </article>
+
+              <article
+                class="blog-card"
+                data-tags="ai teaching reflection"
+                data-title="Teaching with AI Without Losing the Human Part"
+                data-excerpt="Thoughts on using AI in practical, ethical, and student-centered ways in higher education."
+              >
+                <div class="meta">January 2026</div>
+                <h3>Teaching with AI Without Losing the Human Part</h3>
+                <p>
+                  Thoughts on using AI in practical, ethical, and student-centered ways in higher education.
+                </p>
+
+                <div class="tag-row">
+                  <span class="tag">AI</span>
+                  <span class="tag">Teaching</span>
+                  <span class="tag">Reflection</span>
+                </div>
+
+                <a class="read-more" href="teaching-with-ai-human-part.html">Read more →</a>
+              </article>
+            </div>
+
+            <!-- 
+              Empty-state message
+              - Hidden by default
+              - JavaScript reveals it when no posts match the filters
+            -->
+            <p class="blog-empty" id="blogEmpty" hidden>
+              No posts matched your search or selected tag.
+            </p>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer with auto-updating year -->
   <footer>
     <div class="container">
       <p>© <span id="year"></span> Jennifer Lee. Built for GitHub Pages.</p>
     </div>
   </footer>
 
+  <!-- Shared site JavaScript -->
   <script src="../script.js"></script>
 </body>
 </html>
