@@ -84,6 +84,44 @@ Students: Try editing one section at a time to see how it changes the page.
   </div>
 </section>
 
+<!-- 
+SITE SEARCH
+- This search checks a custom search index for pages across the site
+- Because this is a static site, we define searchable content manually
+- Results appear below the search box as the user types
+-->
+<section id="site-search">
+  <div class="container">
+    <div class="search-panel">
+      <label for="siteSearch" class="search-label">Search the site</label>
+      <input
+        type="text"
+        id="siteSearch"
+        class="site-search-input"
+        placeholder="Search teaching, AI, leadership, writing..."
+      />
+      <p class="copy-muted search-help">
+        Search across blog posts, projects, presentations, and featured resources.
+      </p>
+
+      <!-- 
+        SEARCH RESULTS
+        - JavaScript will place matching results here
+        - Hidden by default until the user begins typing
+      -->
+      <div id="siteSearchResults" class="search-results" hidden></div>
+
+      <!-- 
+        EMPTY STATE
+        - Shown only if the user searches and no results match
+      -->
+      <p id="siteSearchEmpty" class="search-empty" hidden>
+        No matching results found.
+      </p>
+    </div>
+  </div>
+</section>
+    
     <section id="about">
       <div class="container">
         <div class="section-heading">
