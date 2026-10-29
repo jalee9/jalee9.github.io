@@ -1,0 +1,163 @@
+/*
+  COURSE RESOURCE STYLES
+  ----------------------
+  Shared styles for course learning resources.
+
+  Design goals:
+  - Keep instructional content readable and accessible.
+  - Create consistent patterns across courses and modules.
+  - Use reusable classes instead of styling individual pages.
+  - Support desktop and smaller screens without separate layouts.
+
+  Course-specific styling should be added only when necessary.
+*/
+
+/* ---------- Design Tokens ---------- */
+
+:root {
+  --content-width: 72rem;
+  --reading-width: 52rem;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+
+  --radius: 0.5rem;
+}
+
+
+/* ---------- Base Styles ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #222;
+  background: #fff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* ---------- Layout ---------- */
+
+.course-container {
+  width: min(100% - 2rem, var(--content-width));
+  margin-inline: auto;
+}
+
+.reading-width {
+  max-width: var(--reading-width);
+}
+
+
+/* ---------- Course Header ---------- */
+
+.course-header {
+  padding-block: var(--space-xl);
+}
+
+.course-code {
+  margin: 0 0 var(--space-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.course-header h1 {
+  margin: 0;
+}
+
+
+/* ---------- Learning Content ---------- */
+
+.learning-content {
+  padding-block: var(--space-lg);
+}
+
+.learning-content section {
+  margin-block: var(--space-xl);
+}
+
+.learning-content h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.learning-content p,
+.learning-content li {
+  line-height: 1.7;
+}
+
+
+/* ---------- Callouts ---------- */
+
+.callout {
+  margin-block: var(--space-lg);
+  padding: var(--space-md);
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+}
+
+.callout h3 {
+  margin-top: 0;
+}
+
+.try-it {
+  border-left: 0.35rem solid #555;
+}
+
+.it-professional {
+  border-left: 0.35rem solid #333;
+}
+
+
+/* ---------- Tables ---------- */
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-block: var(--space-lg);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  font-weight: 700;
+}
+
+
+/* ---------- Responsive Adjustments ---------- */
+
+@media (max-width: 40rem) {
+  .course-header {
+    padding-block: var(--space-lg);
+  }
+
+  .learning-content section {
+    margin-block: var(--space-lg);
+  }
+}
