@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<!--
+  SHARED COURSE STYLES
+  This stylesheet is stored at the site level so it can be reused
+  by CTS 115 and other course resource pages.
+-->
+<link rel="stylesheet" href="../../assets/css/course.css">
+  <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,19 +18,38 @@
 </head>
 
 <body>
-  <header>
-    <p>CTS 115</p>
-    <h1>Information Systems Business Concepts</h1>
+
+  <!--
+    COURSE HEADER
+    Identifies the course consistently across its resource pages.
+    The container class controls the maximum width and page margins.
+  -->
+  <header class="course-header">
+    <div class="course-container">
+      <p class="course-code">CTS 115</p>
+      <h1>Information Systems Business Concepts</h1>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>Welcome</h2>
-      <p>
-        Explore how technology supports business, organizations, and the work
-        of IT professionals.
-      </p>
-    </section>
+  <!--
+    MAIN CONTENT
+    The <main> element identifies the primary content of this page.
+    A page should generally contain only one <main> element.
+  -->
+  <main class="learning-content">
+    <div class="course-container reading-width">
+
+      <section>
+        <h2>Welcome</h2>
+
+        <p>
+          Explore how technology supports business, organizations,
+          and the work of IT professionals.
+        </p>
+      </section>
+
+    </div>
   </main>
+
 </body>
 </html>
