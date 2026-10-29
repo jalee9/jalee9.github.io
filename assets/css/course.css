@@ -52,6 +52,36 @@ img {
   height: auto;
 }
 
+/* ---------- Course Navigation ---------- */
+
+.course-nav {
+  border-bottom: 1px solid #ddd;
+}
+
+.course-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin: 0;
+  padding: var(--space-sm) 0;
+  list-style: none;
+}
+
+.course-nav a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.course-nav a:hover,
+.course-nav a:focus-visible {
+  text-decoration: underline;
+}
+
+.course-nav a[aria-current="page"] {
+  font-weight: 800;
+}
+
 
 /* ---------- Layout ---------- */
 
